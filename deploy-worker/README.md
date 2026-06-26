@@ -7,7 +7,7 @@ Cloudflare Worker для Email Tracker — Firefox расширения отсл
 1. Создайте fork этого репозитория на GitHub
 2. Нажмите кнопку ниже:
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/YOUR_USERNAME/email-tracker-worker)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/qwerokip-wq/email-tracker-firefox)
 
 3. В настройках extension вставьте полученный URL
 
