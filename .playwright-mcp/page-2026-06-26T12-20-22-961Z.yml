@@ -1,0 +1,21 @@
+- generic [ref=e99]:
+  - banner [ref=e100]:
+    - link "Логотип ⁨Mozilla⁩ Открывается в новом окне" [ref=e101] [cursor=pointer]:
+      - /url: https://www.mozilla.org/about/?utm_source=firefox-accounts&utm_medium=Referral
+      - img "Логотип ⁨Mozilla⁩" [ref=e102]
+      - generic [ref=e103]: Открывается в новом окне
+  - main [ref=e104]:
+    - generic [ref=e106]:
+      - heading "Войти" [level=1] [ref=e107]
+      - heading "Введите код двухэтапной аутентификации" [level=2] [ref=e108]
+      - paragraph [ref=e110]: Проверьте своё приложение-аутентификатор, чтобы подтвердить свой вход.
+      - generic [ref=e111]:
+        - generic [ref=e113]:
+          - generic [ref=e114]: Введите код из 6 цифр
+          - textbox "Введите код из 6 цифр" [ref=e115]: "648349"
+        - button "Подтвердить" [disabled] [ref=e116]
+      - generic [ref=e117]:
+        - link "Использовать другой аккаунт" [ref=e118] [cursor=pointer]:
+          - /url: /
+        - link "Проблемы с вводом кода?" [ref=e119] [cursor=pointer]:
+          - /url: /signin_recovery_choice?client_id=a4907de5fa9d78fc&scope=profile%2Bopenid&state=8ca12d96669de0b926cc5dd928a8d9d331dba07464acde5df25f59fbe6671eb4%3AL3J1L2RldmVsb3BlcnMvYWRkb24vc3VibWl0L2Rpc3RyaWJ1dGlvbg&access_type=offline&acr_values=AAL2

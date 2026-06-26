@@ -1,0 +1,228 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - navigation [ref=e7]:
+        - list:
+          - listitem [ref=e8]:
+            - link "QwerokIp" [ref=e9] [cursor=pointer]:
+              - /url: /ru/firefox/user/19987126/
+          - listitem [ref=e10]:
+            - link "Инструменты" [ref=e11] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e12]:
+            - link "Назад к дополнениям" [ref=e13] [cursor=pointer]:
+              - /url: /ru/firefox/
+      - generic [ref=e14]:
+        - heading "Центр разработчиков дополнений" [level=1] [ref=e15]:
+          - link "Центр разработчиков дополнений" [ref=e16] [cursor=pointer]:
+            - /url: /ru/developers/
+            - text: Центр разработчиков
+            - generic [ref=e17]: дополнений
+        - navigation [ref=e18]:
+          - list [ref=e19]:
+            - listitem [ref=e20]:
+              - link "Мои дополнения" [ref=e21] [cursor=pointer]:
+                - /url: /ru/developers/addons
+            - listitem [ref=e22]:
+              - link "Мастерская расширений" [ref=e23] [cursor=pointer]:
+                - /url: https://extensionworkshop.com/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=devhub-menu-link
+            - listitem [ref=e24]:
+              - link "Документация" [ref=e25] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e26]:
+              - link "Инструменты" [ref=e27] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e28]:
+              - link "Сообщество и поддержка" [ref=e29] [cursor=pointer]:
+                - /url: "#"
+    - banner [ref=e30]:
+      - heading "Отправить новое дополнение" [level=2] [ref=e31]
+    - main [ref=e32]:
+      - heading "Версия представлена" [level=3] [ref=e33]
+      - paragraph [ref=e34]: Готово! ✨ Вы получите электронное письмо с подтверждением, когда эта версия будет опубликована на addons.mozilla.org. Обратите внимание, что публикация может занять до 24 часов, или дольше, если дополнение выбрано для ручной проверки. Если вы не увидите письмо через 24 часа, проверьте папку со спамом.
+      - paragraph [ref=e35]:
+        - text: Вы можете привлечь пользователей к своему расширению, добавив подробное описание и снимки экрана в своё заявление. Получите помощь по
+        - link "созданию привлекательного листинга" [ref=e36] [cursor=pointer]:
+          - /url: https://extensionworkshop.com/documentation/develop/create-an-appealing-listing?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=submission
+        - text: в мастерской расширений Firefox.
+      - paragraph [ref=e37]:
+        - link "Управление отображением" [ref=e38] [cursor=pointer]:
+          - /url: /ru/developers/addon/email-tracker-for-gmail/edit
+      - paragraph [ref=e39]: Вы также можете отредактировать эту версию, чтобы добавить примечания к версии или исходный код, если ваша заявка содержит минифицированный, объединённый или иным образом сгенерированный машиной код.
+      - paragraph [ref=e40]:
+        - link "Изменить версию 1.0.5" [ref=e41] [cursor=pointer]:
+          - /url: /ru/developers/addon/email-tracker-for-gmail/versions/6325508
+      - paragraph [ref=e42]: Напоминаем, что ваше дополнение может быть проверено вручную в любое время.
+      - paragraph [ref=e43]:
+        - link "Перейти в мои представления" [ref=e44] [cursor=pointer]:
+          - /url: /ru/developers/addons
+  - contentinfo [ref=e46]:
+    - generic [ref=e47]:
+      - link "Перейти на домашнюю страницу Mozilla" [ref=e49] [cursor=pointer]:
+        - /url: https://mozilla.org/
+      - generic [ref=e51]:
+        - heading "Дополнения" [level=4] [ref=e52]:
+          - link "Дополнения" [ref=e53] [cursor=pointer]:
+            - /url: /ru/firefox/
+        - list [ref=e54]:
+          - listitem [ref=e55]:
+            - link "О сайте" [ref=e56] [cursor=pointer]:
+              - /url: /ru/about
+          - listitem [ref=e57]:
+            - link "Блог о дополнениях для Firefox" [ref=e58] [cursor=pointer]:
+              - /url: https://addons.mozilla.org/blog/
+          - listitem [ref=e59]:
+            - link "Мастерская расширений" [ref=e60] [cursor=pointer]:
+              - /url: https://extensionworkshop.com/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=footer-link
+          - listitem [ref=e61]:
+            - link "Центр разработки" [ref=e62] [cursor=pointer]:
+              - /url: /ru/developers/
+          - listitem [ref=e63]:
+            - link "Политика разработчиков" [ref=e64] [cursor=pointer]:
+              - /url: https://extensionworkshop.com/documentation/publish/add-on-policies/?utm_source=addons.mozilla.org&utm_medium=photon-footer
+          - listitem [ref=e65]:
+            - link "Блог сообщества" [ref=e66] [cursor=pointer]:
+              - /url: https://blog.mozilla.com/addons
+          - listitem [ref=e67]:
+            - link "Форум" [ref=e68] [cursor=pointer]:
+              - /url: https://discourse.mozilla-community.org/c/add-ons
+          - listitem [ref=e69]:
+            - link "Сообщить об ошибке" [ref=e70] [cursor=pointer]:
+              - /url: https://addons.mozilla.org/about
+          - listitem [ref=e71]:
+            - link "Руководство по написанию отзывов" [ref=e72] [cursor=pointer]:
+              - /url: /ru/review_guide
+      - generic [ref=e73]:
+        - heading "Скачать" [level=4] [ref=e74]
+        - list [ref=e75]:
+          - listitem [ref=e76]:
+            - link "Скачать Firefox" [ref=e77] [cursor=pointer]:
+              - /url: https://www.firefox.com/thanks/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+          - listitem [ref=e78]:
+            - link "Windows" [ref=e79] [cursor=pointer]:
+              - /url: https://www.firefox.com/en-US/download/windows/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+          - listitem [ref=e80]:
+            - link "macOS" [ref=e81] [cursor=pointer]:
+              - /url: https://www.firefox.com/en-US/download/mac/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+          - listitem [ref=e82]:
+            - link "iOS" [ref=e83] [cursor=pointer]:
+              - /url: https://www.firefox.com/en-US/download/ios/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+          - listitem [ref=e84]:
+            - link "Android" [ref=e85] [cursor=pointer]:
+              - /url: https://www.firefox.com/en-US/download/android/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+          - listitem [ref=e86]:
+            - link "Linux" [ref=e87] [cursor=pointer]:
+              - /url: https://www.firefox.com/en-US/download/linux/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+          - listitem [ref=e88]:
+            - link "Все" [ref=e89] [cursor=pointer]:
+              - /url: https://www.firefox.com/en-US/download/all/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Последние сборки" [level=4] [ref=e92]
+          - list [ref=e93]:
+            - listitem [ref=e94]:
+              - link "Nightly" [ref=e95] [cursor=pointer]:
+                - /url: https://www.firefox.com/en-US/channel/desktop/#nightly?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+            - listitem [ref=e96]:
+              - link "Бета" [ref=e97] [cursor=pointer]:
+                - /url: https://www.firefox.com/en-US/channel/desktop/#beta?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+        - generic [ref=e98]:
+          - heading "Firefox для бизнеса" [level=4] [ref=e99]
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - link "Предприятие" [ref=e102] [cursor=pointer]:
+                - /url: https://www.firefox.com/en-US/browsers/enterprise/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+      - generic [ref=e103]:
+        - heading "Сообщество" [level=4] [ref=e104]
+        - list [ref=e105]:
+          - listitem [ref=e106]:
+            - link "Подключить" [ref=e107] [cursor=pointer]:
+              - /url: https://connect.mozilla.org/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+          - listitem [ref=e108]:
+            - link "Сделайте взнос" [ref=e109] [cursor=pointer]:
+              - /url: https://www.mozilla.org/contribute/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+          - listitem [ref=e110]:
+            - link "Разработчик" [ref=e111] [cursor=pointer]:
+              - /url: https://www.firefox.com/en-US/channel/desktop/developer/?utm_content=footer-link&utm_medium=referral&utm_source=addons.mozilla.org
+      - generic [ref=e112]:
+        - heading "Подписаться" [level=4] [ref=e113]
+        - list [ref=e114]:
+          - listitem [ref=e115]:
+            - link "Instagram" [ref=e116] [cursor=pointer]:
+              - /url: https://www.instagram.com/firefox
+          - listitem [ref=e117]:
+            - link "YouTube" [ref=e118] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/firefoxchannel
+          - listitem [ref=e119]:
+            - link "TikTok" [ref=e120] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@firefox
+          - listitem [ref=e121]:
+            - link "Bluesky" [ref=e122] [cursor=pointer]:
+              - /url: https://bsky.app/profile/firefox.com
+          - listitem [ref=e123]:
+            - link "Подкаст" [ref=e124] [cursor=pointer]:
+              - /url: https://www.youtube.com/@firefox/podcasts
+      - list [ref=e125]:
+        - listitem [ref=e126]:
+          - link "Приватность" [ref=e127] [cursor=pointer]:
+            - /url: https://www.mozilla.org/privacy/websites/
+        - listitem [ref=e128]:
+          - link "Куки" [ref=e129] [cursor=pointer]:
+            - /url: https://www.mozilla.org/privacy/websites/
+        - listitem [ref=e130]:
+          - link "Юридическая информация" [ref=e131] [cursor=pointer]:
+            - /url: https://www.mozilla.org/about/legal/amo-policies/
+      - paragraph [ref=e132]:
+        - text: Если
+        - link "не указано явно" [ref=e133] [cursor=pointer]:
+          - /url: https://www.mozilla.org/about/legal/
+        - text: ", содержание данного сайта лицензировано в соответствии с"
+        - link "Creative Commons Attribution Share-Alike Licence v3.0" [ref=e134] [cursor=pointer]:
+          - /url: https://creativecommons.org/licenses/by-sa/3.0/
+        - text: или любой более поздней версией.
+      - generic [ref=e137]:
+        - generic [ref=e138] [cursor=pointer]: Другие языки
+        - combobox "Другие языки" [ref=e139]:
+          - option "Čeština"
+          - option "Deutsch"
+          - option "Dolnoserbšćina"
+          - option "Ελληνικά"
+          - option "English (Canadian)"
+          - option "English (British)"
+          - option "English (US)"
+          - option "Español (de Argentina)"
+          - option "Español (de Chile)"
+          - option "Español (de España)"
+          - option "Español (de México)"
+          - option "suomi"
+          - option "Français"
+          - option "Furlan"
+          - option "Frysk"
+          - option "עברית"
+          - option "Hrvatski"
+          - option "Hornjoserbsce"
+          - option "magyar"
+          - option "Interlingua"
+          - option "Italiano"
+          - option "日本語"
+          - option "ქართული"
+          - option "Taqbaylit"
+          - option "한국어"
+          - option "Norsk bokmål"
+          - option "Nederlands"
+          - option "Norsk nynorsk"
+          - option "Polski"
+          - option "Português (do Brasil)"
+          - option "Português (Europeu)"
+          - option "Română"
+          - option "Русский" [selected]
+          - option "slovenčina"
+          - option "Slovenščina"
+          - option "Shqip"
+          - option "Српски"
+          - option "Svenska"
+          - option "Türkçe"
+          - option "Українська"
+          - option "Tiếng Việt"
+          - option "中文 (简体)"
+          - option "正體中文 (繁體)"

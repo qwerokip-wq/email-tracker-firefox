@@ -1,0 +1,42 @@
+- generic [ref=e43]:
+  - banner [ref=e44]:
+    - link "Логотип ⁨Mozilla⁩ Открывается в новом окне" [ref=e45] [cursor=pointer]:
+      - /url: https://www.mozilla.org/about/?utm_source=firefox-accounts&utm_medium=Referral
+      - img "Логотип ⁨Mozilla⁩" [ref=e46]
+      - generic [ref=e47]: Открывается в новом окне
+  - main [ref=e48]:
+    - generic [ref=e50]:
+      - heading "Введите свой пароль для вашего ⁨аккаунта Mozilla⁩" [level=1] [ref=e51]:
+        - text: Введите свой пароль
+        - generic [ref=e52]: для вашего ⁨аккаунта Mozilla⁩
+      - generic [ref=e54]:
+        - img "Стандартный аватар" [ref=e55]
+        - generic [ref=e56]: votisfx@gmail.com
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: Пароль
+            - textbox "Пароль" [ref=e62]: 41371fox
+          - button "Ваш пароль сейчас скрыт." [ref=e63] [cursor=pointer]:
+            - img [ref=e64]
+        - button "Войти" [disabled] [ref=e70]
+      - generic [ref=e71]:
+        - generic [ref=e74]: или
+        - generic [ref=e77]:
+          - button "Продолжить с ⁨Google⁩" [ref=e78] [cursor=pointer]:
+            - img [ref=e79]
+          - button "Продолжить с ⁨Apple⁩" [ref=e85] [cursor=pointer]:
+            - img [ref=e86]
+      - paragraph [ref=e89]:
+        - text: Продолжая, вы соглашаетесь с
+        - link "Условиями обслуживания" [ref=e90] [cursor=pointer]:
+          - /url: /legal/terms
+        - text: и
+        - link "Уведомлением о конфиденциальности" [ref=e91] [cursor=pointer]:
+          - /url: /legal/privacy
+        - text: .
+      - generic [ref=e92]:
+        - link "Использовать другой аккаунт" [ref=e93] [cursor=pointer]:
+          - /url: /
+        - link "Забыли пароль?" [ref=e94] [cursor=pointer]:
+          - /url: /reset_password/?client_id=a4907de5fa9d78fc&scope=profile%2Bopenid&state=8ca12d96669de0b926cc5dd928a8d9d331dba07464acde5df25f59fbe6671eb4%3AL3J1L2RldmVsb3BlcnMvYWRkb24vc3VibWl0L2Rpc3RyaWJ1dGlvbg&access_type=offline&acr_values=AAL2
