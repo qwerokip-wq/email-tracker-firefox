@@ -1,0 +1,8 @@
+name = "email-tracker"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+account_id = "9a9adc0a57a10ac2d43c7308619921af"
+
+[[kv_namespaces]]
+binding = "TRACKER_KV"
+id = "4b940a90ab254c11b993f463eef4b98c"

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1 id="title">Email Tracker</h1>
+      <button id="refreshBtn" title="Refresh">↻</button>
+    </header>
+
+    <section id="stats">
+      <div class="stat-card" id="stat-sent">
+        <span class="stat-value" id="sentCount">0</span>
+        <span class="stat-label" id="sentLabel">Sent</span>
+      </div>
+      <div class="stat-card" id="stat-opens">
+        <span class="stat-value" id="opensCount">0</span>
+        <span class="stat-label" id="opensLabel">Opens</span>
+      </div>
+      <div class="stat-card" id="stat-clicks">
+        <span class="stat-value" id="clicksCount">0</span>
+        <span class="stat-label" id="clicksLabel">Clicks</span>
+      </div>
+      <div class="stat-card" id="stat-unique">
+        <span class="stat-value" id="uniqueCount">0</span>
+        <span class="stat-label" id="uniqueLabel">Unique</span>
+      </div>
+    </section>
+
+    <section id="emails">
+      <div id="noData">
+        <div id="noDataIcon">✉</div>
+        <p id="noDataTitle">No tracked emails yet</p>
+        <p id="noDataDesc">Send an email with tracking enabled to see stats</p>
+      </div>
+      <ul id="emailList"></ul>
+    </section>
+
+    <footer>
+      <button id="settingsBtn" id="settingsLabel">Settings</button>
+      <span id="syncStatus"></span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

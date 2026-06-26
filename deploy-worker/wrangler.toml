@@ -1,0 +1,11 @@
+name = "email-tracker"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+account_id = "9a9adc0a57a10ac2d43c7308619921af"
+
+# KV namespace — создаётся автоматически скриптом deploy.ps1
+# Если деплоите вручную: создайте KV Namespace в dashboard Cloudflare
+# и вставьте его ID ниже:
+[[kv_namespaces]]
+binding = "TRACKER_KV"
+id = "4b940a90ab254c11b993f463eef4b98c"

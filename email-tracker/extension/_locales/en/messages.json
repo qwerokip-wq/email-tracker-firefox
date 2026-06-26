@@ -1,0 +1,131 @@
+{
+  "appName": {
+    "message": "Email Tracker for Gmail"
+  },
+  "appDesc": {
+    "message": "Track email opens and link clicks in Gmail. Real-time tracking with Gmail badge indicators."
+  },
+  "popupTitle": {
+    "message": "Email Tracker"
+  },
+  "statsSent": {
+    "message": "Sent"
+  },
+  "statsOpens": {
+    "message": "Opens"
+  },
+  "statsClicks": {
+    "message": "Clicks"
+  },
+  "statsUnique": {
+    "message": "Unique"
+  },
+  "noData": {
+    "message": "No tracked emails yet"
+  },
+  "sendFirstEmail": {
+    "message": "Send an email with tracking enabled to see stats"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "lastEvent": {
+    "message": "Last event"
+  },
+  "never": {
+    "message": "Never"
+  },
+  "justNow": {
+    "message": "Just now"
+  },
+  "minutesAgo": {
+    "message": "min ago"
+  },
+  "hoursAgo": {
+    "message": "h ago"
+  },
+  "daysAgo": {
+    "message": "d ago"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "workerUrl": {
+    "message": "Tracker Server URL"
+  },
+  "workerUrlHelp": {
+    "message": "Your own Worker URL. Leave empty to use the built-in default tracker."
+  },
+  "trackingEnabled": {
+    "message": "Tracking Enabled"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "saved": {
+    "message": "Settings saved"
+  },
+  "privacyProtect": {
+    "message": "Recipient Privacy Protection"
+  },
+  "privacyProtectHelp": {
+    "message": "Encrypt recipient email addresses in tracking pixels"
+  },
+  "statusOpened": {
+    "message": "Opened"
+  },
+  "statusNotOpened": {
+    "message": "Not opened"
+  },
+  "statusClicked": {
+    "message": "Clicked"
+  },
+  "opensCount": {
+    "message": "opens"
+  },
+  "clicksCount": {
+    "message": "clicks"
+  },
+  "recipients": {
+    "message": "Recipients"
+  },
+  "subject": {
+    "message": "Subject"
+  },
+  "sentAt": {
+    "message": "Sent"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "clearData": {
+    "message": "Clear local data"
+  },
+  "openTracker": {
+    "message": "Open Email Tracker"
+  },
+  "today": {
+    "message": "Today"
+  },
+  "thisWeek": {
+    "message": "This week"
+  },
+  "earlier": {
+    "message": "Earlier"
+  },
+  "activityTitle": {
+    "message": "Activity"
+  },
+  "eventOpened": {
+    "message": "Email opened"
+  },
+  "eventClicked": {
+    "message": "Link clicked"
+  },
+  "displayCount": {
+    "message": "Display Count"
+  },
+  "displayCountHelp": {
+    "message": "Number of recent emails to show in the popup (default: 5)"
+  }
+}

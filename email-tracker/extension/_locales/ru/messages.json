@@ -1,0 +1,131 @@
+{
+  "appName": {
+    "message": "Email Tracker для Gmail"
+  },
+  "appDesc": {
+    "message": "Отслеживание открытий и кликов в Gmail. Статус-значки прямо в интерфейсе."
+  },
+  "popupTitle": {
+    "message": "Email Tracker"
+  },
+  "statsSent": {
+    "message": "Отправлено"
+  },
+  "statsOpens": {
+    "message": "Открыто"
+  },
+  "statsClicks": {
+    "message": "Кликов"
+  },
+  "statsUnique": {
+    "message": "Уникальных"
+  },
+  "noData": {
+    "message": "Ещё нет отслеженных писем"
+  },
+  "sendFirstEmail": {
+    "message": "Отправьте письмо с трекингом, чтобы увидеть статистику"
+  },
+  "loading": {
+    "message": "Загрузка..."
+  },
+  "lastEvent": {
+    "message": "Последнее событие"
+  },
+  "never": {
+    "message": "Никогда"
+  },
+  "justNow": {
+    "message": "Только что"
+  },
+  "minutesAgo": {
+    "message": "мин назад"
+  },
+  "hoursAgo": {
+    "message": "ч назад"
+  },
+  "daysAgo": {
+    "message": "д назад"
+  },
+  "settings": {
+    "message": "Настройки"
+  },
+  "workerUrl": {
+    "message": "URL сервера трекера"
+  },
+  "workerUrlHelp": {
+    "message": "Ваш Worker URL. Оставьте пустым для использования встроенного трекера."
+  },
+  "trackingEnabled": {
+    "message": "Трекинг включён"
+  },
+  "save": {
+    "message": "Сохранить"
+  },
+  "saved": {
+    "message": "Настройки сохранены"
+  },
+  "privacyProtect": {
+    "message": "Защита конфиденциальности"
+  },
+  "privacyProtectHelp": {
+    "message": "Шифровать адреса получателей в tracking-пикселях"
+  },
+  "statusOpened": {
+    "message": "Открыто"
+  },
+  "statusNotOpened": {
+    "message": "Не открыто"
+  },
+  "statusClicked": {
+    "message": "Клик"
+  },
+  "opensCount": {
+    "message": "открытий"
+  },
+  "clicksCount": {
+    "message": "кликов"
+  },
+  "recipients": {
+    "message": "Получатели"
+  },
+  "subject": {
+    "message": "Тема"
+  },
+  "sentAt": {
+    "message": "Отправлено"
+  },
+  "refresh": {
+    "message": "Обновить"
+  },
+  "clearData": {
+    "message": "Очистить локальные данные"
+  },
+  "openTracker": {
+    "message": "Открыть Email Tracker"
+  },
+  "today": {
+    "message": "Сегодня"
+  },
+  "thisWeek": {
+    "message": "На этой неделе"
+  },
+  "earlier": {
+    "message": "Ранее"
+  },
+  "activityTitle": {
+    "message": "Активность"
+  },
+  "eventOpened": {
+    "message": "Письмо открыто"
+  },
+  "eventClicked": {
+    "message": "Ссылка открыта"
+  },
+  "displayCount": {
+    "message": "Количество записей"
+  },
+  "displayCountHelp": {
+    "message": "Сколько писем показывать в попапе (по умолчанию: 5)"
+  }
+}
