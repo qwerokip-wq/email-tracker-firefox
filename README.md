@@ -14,7 +14,7 @@ Firefox-расширение для отслеживания открытий и
 
 ## Скриншоты
 
-![Статистика писем](email-tracker/screenshot.png)
+<img width="416" height="385" alt="Sleekshot 2026-06-26 15-41-49" src="https://github.com/user-attachments/assets/47667eac-a2fe-46ec-89d0-f769806472c2" />
 
 ## Установка из AMO
 
