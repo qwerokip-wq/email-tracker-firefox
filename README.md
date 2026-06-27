@@ -14,7 +14,7 @@ Firefox-расширение для отслеживания открытий и
 
 ## Скриншоты
 
-*(добавьте скриншоты после публикации)*
+![Статистика писем](email-tracker/screenshot.png)
 
 ## Установка из AMO
 
@@ -81,8 +81,8 @@ email-tracker/
 │   └── README.md              # Инструкция по деплою
 │
 ├── dist/                      # Готовые к установке пакеты
-│   ├── email-tracker-1.0.2.zip
-│   └── email-tracker-1.0.2.xpi
+│   ├── email-tracker-1.0.6.zip
+│   └── email-tracker-1.0.6.xpi
 │
 ├── worker/                    # Развёрнутый экземпляр Worker
 │
@@ -157,10 +157,10 @@ npx wrangler deploy
 
 ```powershell
 # Упаковка .zip
-Compress-Archive -Path extension\* -DestinationPath dist\email-tracker-1.0.2.zip
+Compress-Archive -Path email-tracker\extension\* -DestinationPath dist\email-tracker-1.0.6.zip
 
 # Копия .xpi (для Firefox)
-Copy-Item dist\email-tracker-1.0.2.zip dist\email-tracker-1.0.2.xpi
+Copy-Item dist\email-tracker-1.0.6.zip dist\email-tracker-1.0.6.xpi
 ```
 
 ## Публикация на AMO
