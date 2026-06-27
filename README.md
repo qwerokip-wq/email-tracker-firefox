@@ -140,36 +140,6 @@ npx wrangler deploy
 - **Display Count** — сколько писем показывать в попапе (по умолчанию 5)
 - **Clear Local Data** — очистить локальную статистику
 
-## Разработка
-
-### Требования
-
-- Node.js 18+
-- Firefox 109+
-
-### Локальный тест
-
-1. Загрузите расширение через `about:debugging`
-2. Откройте Инструменты разработчика → Консоль на `mail.google.com`
-3. Фильтр: `[EmailTracker]`
-
-### Сборка пакета
-
-```powershell
-# Упаковка .zip
-Compress-Archive -Path email-tracker\extension\* -DestinationPath dist\email-tracker-1.0.6.zip
-
-# Копия .xpi (для Firefox)
-Copy-Item dist\email-tracker-1.0.6.zip dist\email-tracker-1.0.6.xpi
-```
-
-## Публикация на AMO
-
-1. Подготовьте .zip пакет (лежит в `dist/`)
-2. Загрузите на https://addons.mozilla.org/developers/addon/submit/
-3. Заполните описание, категории, скриншоты
-4. Отправьте на проверку
-
 ## Лицензия
 
 MIT
