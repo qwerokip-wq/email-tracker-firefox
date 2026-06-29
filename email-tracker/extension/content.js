@@ -310,6 +310,15 @@
     }
   }
 
+  async function getDeletedIds() {
+    try {
+      const result = await browser.storage.local.get('deletedIds');
+      return new Set(result.deletedIds || []);
+    } catch (_) {
+      return new Set();
+    }
+  }
+
   async function syncTrackingStatus() {
     try {
       const api = window.EmailTrackerAPI;
@@ -319,7 +328,26 @@
       const emails = await storage.getAllEmails();
       if (emails.length === 0) return;
 
-      const allIds = emails.map(e => e.trackingId);
+      const deletedIds = await getDeletedIds();
+      let deletedLocally = false;
+
+      const remaining = emails.filter(e => {
+        if (deletedIds.has(e.trackingId)) {
+          storage.deleteEmail(e.trackingId);
+          deletedLocally = true;
+          return false;
+        }
+        return true;
+      });
+
+      if (deletedLocally && remaining.length === 0) {
+        processEmailRows();
+        return;
+      }
+
+      const allIds = remaining.map(e => e.trackingId);
+      if (allIds.length === 0) return;
+
       const stats = await api.fetchBatchStats(allIds);
       if (!stats || Object.keys(stats).length === 0) return;
 
@@ -327,7 +355,7 @@
       for (const [id, data] of Object.entries(stats)) {
         if (!data) continue;
 
-        const local = emails.find(e => e.trackingId === id);
+        const local = remaining.find(e => e.trackingId === id);
         const newOpens = data.totalOpens || 0;
         const newClicks = data.totalClicks || 0;
         const hadChange = !local || (local.totalOpens !== newOpens || local.totalClicks !== newClicks);
@@ -344,8 +372,8 @@
         }
       }
 
-      if (updated > 0) {
-        log(`Updated ${updated} email statuses from server`);
+      if (updated > 0 || deletedLocally) {
+        log(`Updated ${updated} email statuses from server` + (deletedLocally ? ', removed deleted' : ''));
         processEmailRows();
       }
     } catch (e) {
@@ -364,7 +392,15 @@
       (async () => {
         try {
           const storage = window.EmailTrackerStorage;
-          if (storage && msg.trackingId) await storage.deleteEmail(msg.trackingId);
+          if (storage && msg.trackingId) {
+            await storage.deleteEmail(msg.trackingId);
+            const result = await browser.storage.local.get('deletedIds');
+            const arr = result.deletedIds || [];
+            if (!arr.includes(msg.trackingId)) {
+              arr.push(msg.trackingId);
+              await browser.storage.local.set({ deletedIds: arr });
+            }
+          }
           sendResponse({ ok: true });
         } catch (e) {
           sendResponse({ ok: false, error: e.message });
@@ -378,6 +414,7 @@
         try {
           const storage = window.EmailTrackerStorage;
           if (storage) await storage.clearAll();
+          await browser.storage.local.set({ deletedIds: [] });
           sendResponse({ ok: true });
         } catch (e) {
           sendResponse({ ok: false, error: e.message });
