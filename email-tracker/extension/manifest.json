@@ -28,7 +28,7 @@
     }
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["lib/api.js", "lib/storage.js", "background.js"]
   },
   "action": {
     "default_popup": "popup/popup.html",

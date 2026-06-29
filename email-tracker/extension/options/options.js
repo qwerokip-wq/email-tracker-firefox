@@ -89,6 +89,7 @@
       if (tabs.length > 0) {
         await browser.tabs.sendMessage(tabs[0].id, { type: 'clear-data' });
       }
+      await browser.runtime.sendMessage({ type: 'clear-data' });
       showStatus('Local data cleared', 'success');
     } catch (e) {
       showStatus('Error: ' + e.message, 'error');

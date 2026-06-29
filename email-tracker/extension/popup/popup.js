@@ -50,11 +50,24 @@
     }
   }
 
+  async function fetchFromBackground() {
+    try {
+      const resp = await browser.runtime.sendMessage({ type: 'get-tracked-data' });
+      return resp || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
   async function loadData() {
     const sync = id('syncStatus');
     if (sync) sync.textContent = g('refresh') + '...';
 
     let data = await fetchFromContent();
+
+    if (!data) {
+      data = await fetchFromBackground();
+    }
 
     if (!data) {
       const tabs = await browser.tabs.query({ url: 'https://mail.google.com/*' });

@@ -192,7 +192,7 @@
 
       const storage = window.EmailTrackerStorage;
       if (storage) {
-        await storage.saveEmail({
+        const emailData = {
           trackingId,
           subject: subject || '(no subject)',
           recipients,
@@ -201,8 +201,16 @@
           uniqueOpens: 0,
           totalClicks: 0,
           status: 'pending',
-        });
+        };
+        await storage.saveEmail(emailData);
         log('Saved to local storage');
+
+        try {
+          browser.runtime.sendMessage({ type: 'save-email', email: emailData });
+          log('Sent to background');
+        } catch (e) {
+          warn('Background send failed:', e);
+        }
       }
     } catch (e) {
       warn('Error in handleSend:', e);
