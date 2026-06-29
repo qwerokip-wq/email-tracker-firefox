@@ -374,7 +374,6 @@
     }
 
     if (msg.type === 'clear-data') {
-    if (msg.type === 'clear-data') {
       (async () => {
         try {
           const storage = window.EmailTrackerStorage;
