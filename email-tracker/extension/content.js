@@ -360,6 +360,20 @@
   }
 
   browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+    if (msg.type === 'delete-email') {
+      (async () => {
+        try {
+          const storage = window.EmailTrackerStorage;
+          if (storage && msg.trackingId) await storage.deleteEmail(msg.trackingId);
+          sendResponse({ ok: true });
+        } catch (e) {
+          sendResponse({ ok: false, error: e.message });
+        }
+      })();
+      return true;
+    }
+
+    if (msg.type === 'clear-data') {
     if (msg.type === 'clear-data') {
       (async () => {
         try {

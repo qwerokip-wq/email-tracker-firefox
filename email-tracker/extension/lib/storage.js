@@ -166,6 +166,17 @@ const EmailTrackerStorage = (() => {
     };
   }
 
+  async function deleteEmail(trackingId) {
+    const database = await openDB();
+    const tx = database.transaction(STORE_EMAILS, 'readwrite');
+    const store = tx.objectStore(STORE_EMAILS);
+    store.delete(trackingId);
+    return new Promise((resolve, reject) => {
+      tx.oncomplete = () => resolve();
+      tx.onerror = (e) => reject(e.target.error);
+    });
+  }
+
   async function clearAll() {
     const database = await openDB();
     for (const store of [STORE_EMAILS, STORE_EVENTS]) {
@@ -179,7 +190,7 @@ const EmailTrackerStorage = (() => {
   }
 
   return {
-    saveEmail, getAllEmails, getEmail, updateEmailStatus,
+    saveEmail, getAllEmails, getEmail, updateEmailStatus, deleteEmail,
     addEvent, getEvents, getAllEvents,
     getStats, clearAll,
   };

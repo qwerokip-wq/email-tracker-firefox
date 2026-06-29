@@ -205,6 +205,30 @@ header h1 {
   border: 1px solid var(--border);
 }
 
+.email-item .delete-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 4px;
+  margin-left: 4px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.email-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.email-item .delete-btn:hover {
+  color: var(--danger);
+  background: var(--primary-light);
+}
+
 .email-item .email-time {
   font-size: 11px;
   color: var(--text-secondary);

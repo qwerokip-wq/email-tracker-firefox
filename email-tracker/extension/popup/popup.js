@@ -59,6 +59,19 @@
     }
   }
 
+  async function deleteEmail(trackingId) {
+    try {
+      await browser.runtime.sendMessage({ type: 'delete-email', trackingId });
+    } catch (_) {}
+
+    try {
+      const tabs = await browser.tabs.query({ url: 'https://mail.google.com/*' });
+      if (tabs && tabs.length > 0) {
+        await browser.tabs.sendMessage(tabs[0].id, { type: 'delete-email', trackingId });
+      }
+    } catch (_) {}
+  }
+
   async function loadData() {
     const sync = id('syncStatus');
     if (sync) sync.textContent = g('refresh') + '...';
@@ -128,9 +141,20 @@
       tm.className = 'email-time';
       tm.textContent = fmt(e.lastEvent || e.sentAt);
 
+      const del = document.createElement('button');
+      del.className = 'delete-btn';
+      del.title = 'Delete';
+      del.textContent = '✕';
+      del.addEventListener('click', async (ev) => {
+        ev.stopPropagation();
+        await deleteEmail(e.trackingId);
+        loadData();
+      });
+
       item.appendChild(dot);
       item.appendChild(ct);
       item.appendChild(tm);
+      item.appendChild(del);
       list.appendChild(item);
     }
   }

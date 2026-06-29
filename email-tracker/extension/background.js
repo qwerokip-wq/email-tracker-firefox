@@ -20,11 +20,25 @@
         try {
           const storage = window.EmailTrackerStorage;
           if (!storage) { sendResponse({ emails: [], stats: {} }); return; }
+          await syncTrackingStatus();
           const emails = await storage.getAllEmails();
           const stats = await storage.getStats();
           sendResponse({ emails, stats });
         } catch (e) {
           sendResponse({ emails: [], stats: {} });
+        }
+      })();
+      return true;
+    }
+
+    if (message.type === 'delete-email') {
+      (async () => {
+        try {
+          const storage = window.EmailTrackerStorage;
+          if (storage && message.trackingId) await storage.deleteEmail(message.trackingId);
+          sendResponse({ ok: true });
+        } catch (e) {
+          sendResponse({ ok: false, error: e.message });
         }
       })();
       return true;
