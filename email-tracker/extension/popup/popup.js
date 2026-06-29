@@ -63,24 +63,15 @@
     const sync = id('syncStatus');
     if (sync) sync.textContent = g('refresh') + '...';
 
-    let data = await fetchFromContent();
+    let data = await fetchFromBackground();
 
     if (!data) {
-      data = await fetchFromBackground();
+      data = await fetchFromContent();
     }
 
     if (!data) {
-      const tabs = await browser.tabs.query({ url: 'https://mail.google.com/*' });
-      if (!tabs || tabs.length === 0) {
-        if (sync) sync.textContent = 'Open Gmail';
-        id('noData').style.display = 'flex';
-        return;
-      }
-      if (sync) sync.textContent = 'Loading...';
+      if (sync) sync.textContent = 'No data';
       id('noData').style.display = 'flex';
-      id('noDataTitle').textContent = 'Loading...';
-      id('noDataDesc').textContent = 'Wait for Gmail to load';
-      setTimeout(loadData, 2000);
       return;
     }
 

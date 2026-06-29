@@ -157,6 +157,7 @@ async function handleAllStats(kv) {
           trackingId: record.trackingId, subject: record.subject,
           sentAt: record.sentAt, recipients: record.recipients,
           totalOpens: Object.values(record.opens || {}).reduce((s, arr) => s + arr.length, 0),
+          uniqueOpens: Object.keys(record.opens || {}).length,
           totalClicks: Object.values(record.clicks || {}).reduce((s, arr) => s + arr.length, 0),
           lastEvent: record.lastEvent,
         });

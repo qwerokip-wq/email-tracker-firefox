@@ -50,27 +50,37 @@
       const storage = window.EmailTrackerStorage;
       if (!api || !storage) return;
 
-      const emails = await storage.getAllEmails();
-      if (emails.length === 0) return;
+      const allServer = await api.fetchAllStats();
+      if (!allServer || allServer.length === 0) return;
 
-      const allIds = emails.map(e => e.trackingId);
-      const stats = await api.fetchBatchStats(allIds);
-      if (!stats || Object.keys(stats).length === 0) return;
-
+      const localEmails = await storage.getAllEmails();
       let updated = 0;
-      for (const [id, data] of Object.entries(stats)) {
-        if (!data) continue;
-        const local = emails.find(e => e.trackingId === id);
-        const newOpens = data.totalOpens || 0;
-        const newClicks = data.totalClicks || 0;
-        const hadChange = !local || (local.totalOpens !== newOpens || local.totalClicks !== newClicks);
 
-        if (hadChange && (newOpens > 0 || newClicks > 0)) {
-          await storage.updateEmailStatus(id, {
+      for (const item of allServer) {
+        if (!item.trackingId) continue;
+        const local = localEmails.find(e => e.trackingId === item.trackingId);
+        const newOpens = item.totalOpens || 0;
+        const newClicks = item.totalClicks || 0;
+
+        if (!local) {
+          await storage.saveEmail({
+            trackingId: item.trackingId,
+            subject: item.subject || '(no subject)',
+            recipients: item.recipients || [],
+            sentAt: item.sentAt || Date.now(),
             totalOpens: newOpens,
-            uniqueOpens: data.uniqueOpens || 0,
+            uniqueOpens: item.uniqueOpens || 0,
             totalClicks: newClicks,
-            lastEvent: data.lastEvent,
+            lastEvent: item.lastEvent || null,
+            status: newClicks > 0 ? 'clicked' : newOpens > 0 ? 'opened' : 'pending',
+          });
+          updated++;
+        } else if (newOpens !== local.totalOpens || newClicks !== local.totalClicks) {
+          await storage.updateEmailStatus(item.trackingId, {
+            totalOpens: newOpens,
+            uniqueOpens: item.uniqueOpens || 0,
+            totalClicks: newClicks,
+            lastEvent: item.lastEvent || local.lastEvent,
             status: newClicks > 0 ? 'clicked' : newOpens > 0 ? 'opened' : 'pending',
           });
           updated++;
@@ -78,7 +88,7 @@
       }
 
       if (updated > 0) {
-        console.log(`[EmailTracker] BG sync updated ${updated} emails`);
+        console.log(`[EmailTracker] BG sync: ${updated} emails updated from server`);
       }
     } catch (e) {
       console.warn('[EmailTracker] BG sync error:', e);
