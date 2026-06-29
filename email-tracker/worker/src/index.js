@@ -168,6 +168,11 @@ async function handleAllStats(kv) {
   return jsonResponse(results);
 }
 
+async function handleDelete(kv, trackingId) {
+  await kv.delete(`tracking:${trackingId}`);
+  return jsonResponse({ ok: true });
+}
+
 async function handleEvents(kv, request, trackingId) {
   const raw = await kv.get(`tracking:${trackingId}`, 'text');
   if (!raw) return jsonResponse({ error: 'Not found' }, 404);
@@ -199,6 +204,9 @@ export default {
 
     const eventsMatch = path.match(/^\/api\/events\/([^/]+)/);
     if (eventsMatch) return handleEvents(kv, request, eventsMatch[1]);
+
+    const deletePath = path.match(/^\/api\/delete\/([^/]+)/);
+    if (deletePath && request.method === 'DELETE') return handleDelete(kv, deletePath[1]);
 
     return jsonResponse({ ok: true, message: 'Email Tracker Worker is running' });
   },

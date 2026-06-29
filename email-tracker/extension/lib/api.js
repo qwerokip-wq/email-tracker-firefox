@@ -101,6 +101,22 @@ const EmailTrackerAPI = (() => {
     return [];
   }
 
+  async function deleteFromServer(trackingId) {
+    await ensureInit();
+    const baseUrl = getBaseUrl();
+    if (!baseUrl) return null;
+
+    try {
+      const response = await fetch(`${baseUrl}/api/delete/${trackingId}`, {
+        method: 'DELETE',
+      });
+      return response.ok ? response.json() : null;
+    } catch (e) {
+      warn('deleteFromServer failed:', e);
+      return null;
+    }
+  }
+
   async function fetchEvents(trackingId) {
     await ensureInit();
     const baseUrl = getBaseUrl();
@@ -126,6 +142,7 @@ const EmailTrackerAPI = (() => {
     fetchBatchStats,
     fetchAllStats,
     fetchEvents,
+    deleteFromServer,
   };
 })();
 

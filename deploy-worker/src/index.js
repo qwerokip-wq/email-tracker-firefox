@@ -85,21 +85,6 @@ async function handleClick(request, kv, trackingId, recipientId) {
   }
   const clientInfo = getClientInfo(request);
 
-  const key = `tracking:${trackingId}`;
-  const raw = await kv.get(key, 'text');
-  let hasOpens = false;
-  if (raw) {
-    const record = JSON.parse(raw);
-    hasOpens = Object.values(record.opens || {}).some(arr => arr.length > 0);
-  }
-
-  if (!hasOpens) {
-    await logEvent(kv, trackingId, recipientId, 'open', {
-      ip: clientInfo.ip, userAgent: clientInfo.userAgent, country: clientInfo.country,
-      source: 'click_implied',
-    });
-  }
-
   await logEvent(kv, trackingId, recipientId, 'click', {
     url: targetUrl,
     ip: clientInfo.ip,
@@ -183,6 +168,11 @@ async function handleAllStats(kv) {
   return jsonResponse(results);
 }
 
+async function handleDelete(kv, trackingId) {
+  await kv.delete(`tracking:${trackingId}`);
+  return jsonResponse({ ok: true });
+}
+
 async function handleEvents(kv, request, trackingId) {
   const raw = await kv.get(`tracking:${trackingId}`, 'text');
   if (!raw) return jsonResponse({ error: 'Not found' }, 404);
@@ -214,6 +204,9 @@ export default {
 
     const eventsMatch = path.match(/^\/api\/events\/([^/]+)/);
     if (eventsMatch) return handleEvents(kv, request, eventsMatch[1]);
+
+    const deletePath = path.match(/^\/api\/delete\/([^/]+)/);
+    if (deletePath && request.method === 'DELETE') return handleDelete(kv, deletePath[1]);
 
     return jsonResponse({ ok: true, message: 'Email Tracker Worker is running' });
   },

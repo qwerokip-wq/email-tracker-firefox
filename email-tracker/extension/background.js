@@ -1,6 +1,8 @@
 (function () {
   console.log('[EmailTracker] Background script loaded');
 
+  let pendingDeletes = new Set();
+
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'save-email') {
       (async () => {
@@ -34,8 +36,13 @@
     if (message.type === 'delete-email') {
       (async () => {
         try {
+          const id = message.trackingId;
+          if (!id) { sendResponse({ ok: false, error: 'no id' }); return; }
+          const api = window.EmailTrackerAPI;
+          if (api) await api.deleteFromServer(id);
           const storage = window.EmailTrackerStorage;
-          if (storage && message.trackingId) await storage.deleteEmail(message.trackingId);
+          if (storage) await storage.deleteEmail(id);
+          pendingDeletes.add(id);
           sendResponse({ ok: true });
         } catch (e) {
           sendResponse({ ok: false, error: e.message });
@@ -72,6 +79,7 @@
 
       for (const item of allServer) {
         if (!item.trackingId) continue;
+        if (pendingDeletes.has(item.trackingId)) continue;
         const local = localEmails.find(e => e.trackingId === item.trackingId);
         const newOpens = item.totalOpens || 0;
         const newClicks = item.totalClicks || 0;
@@ -111,4 +119,8 @@
 
   setTimeout(syncTrackingStatus, 5000);
   setInterval(syncTrackingStatus, 30000);
+
+  setInterval(() => {
+    pendingDeletes.clear();
+  }, 300000);
 })();
